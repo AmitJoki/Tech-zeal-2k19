@@ -14,7 +14,7 @@
     <div id="stars3" style="position: fixed;"></div>
 
     <script>
-        var hash = location.hash.replace(/_/, ' ').substr(1);
+        var hash = location.hash.replace(/_/g, ' ').substr(1);
         var eventName = hash.split('-')[0];
         var eventDept = hash.split('-')[1];
     </script>
@@ -66,7 +66,7 @@
 
                 var database = firebase.database();
 
-                firebase.database().ref('users/' + form["Phone"].value + eventDept + eventName).set({
+                firebase.database().ref('users/' + eventDept + '/' + eventName + '/' + form["Phone"].value).set({
                     name: form["Name"].value,
                     email: form["Email"].value,
                     year: form["Year"].value,
