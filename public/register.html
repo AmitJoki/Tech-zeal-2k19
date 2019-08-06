@@ -14,14 +14,14 @@
     <div id="stars3" style="position: fixed;"></div>
 
     <script>
-        var hash = location.hash.replace(/_/, ' ').substr(1);
+        var hash = location.hash.replace(/_/g, ' ').substr(1);
         var eventName = hash.split('-')[0];
         var eventDept = hash.split('-')[1];
     </script>
     <div id="loading" class="">Loading&#8230;</div>
 
     <h1 class="shadow" style="font-size: 40px; margin-top: 0;">
-        TECHZEAL 2K19
+        GENNEXT 2K19
     </h1>
     <div class="home-width"
         style="margin: auto; border: 1.8px solid #dadada; box-shadow: inset 0 0 1em rgba(0, 170, 170, 0.5), 0 0 1em rgba(0, 170, 170, 0.5);">
@@ -66,7 +66,7 @@
 
                 var database = firebase.database();
 
-                firebase.database().ref('users/' + form["Phone"].value + eventDept + eventName).set({
+                firebase.database().ref('users/' + eventDept + '/' + eventName + '/' + form["Phone"].value).set({
                     name: form["Name"].value,
                     email: form["Email"].value,
                     year: form["Year"].value,
