@@ -7,6 +7,16 @@ html {
   src: url("MuseoSansBlack.woff") format("woff");
 }
 
+.home-width {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-width {
+    width: 65%;
+  }
+}
+
 h2,
 h1 {
   text-align: center;
@@ -138,7 +148,7 @@ body {
   max-height: 0;
   padding: 0 1em;
   color: #ffffff;
-  background: rgba(4, 15, 35, 0.58);
+  background: rgba(6, 20, 46, 0.58);
   transition: all 0.35s;
   /* text-align: center; */
 }
@@ -240,10 +250,10 @@ button:focus {
   bottom: 0;
   margin-bottom: auto;
   left: 0;
-  padding: 0.8rem;
+  padding: 0.6rem;
   background-color: #160f0f;
   text-align: center;
-  color: #0dd;
+  color: #0fbaba;
   font-size: 8px;
   font-family:  'Titillium Web', sans-serif;
 }
@@ -432,4 +442,27 @@ select {
   to {
     transform: translateY(-2000px);
   }
+}
+
+.love {
+  display: inline-block;
+  position: relative;
+  top: .2em;
+  font-size: 1.5em;
+  color: #e74c3c;
+  -webkit-transform: scale(.9);
+  -moz-transform: scale(.9);
+  transform: scale(.9);
+  -webkit-animation: love .5s infinite linear alternate-reverse;
+  -moz-animation: love .5s infinite linear alternate-reverse;
+  animation: love .5s infinite linear alternate-reverse;
+}
+@-webkit-keyframes love {
+  to {-webkit-transform: scale(1.2);}
+}
+@-moz-keyframes love {
+  to {-moz-transform: scale(1.2);}
+}
+@keyframes love {
+  to {transform: scale(1.2);}
 }

@@ -21,10 +21,10 @@
     <div id="loading" class="">Loading&#8230;</div>
 
     <h1 class="shadow" style="font-size: 40px; margin-top: 0;">
-        TECHZEAL 2K19
+        GENNEXT 2K19
     </h1>
-    <div
-        style="width: 60%; margin: auto; border: 1.8px solid #dadada; box-shadow: inset 0 0 1em rgba(0, 170, 170, 0.5), 0 0 1em rgba(0, 170, 170, 0.5);">
+    <div class="home-width"
+        style="margin: auto; border: 1.8px solid #dadada; box-shadow: inset 0 0 1em rgba(0, 170, 170, 0.5), 0 0 1em rgba(0, 170, 170, 0.5);">
         <input class='invisible' type="checkbox" id="chck1">
 
 
@@ -66,7 +66,7 @@
 
                 var database = firebase.database();
 
-                firebase.database().ref('users/' + new Date().getTime()).set({
+                firebase.database().ref('users/' + form["Phone"].value + eventDept + eventName).set({
                     name: form["Name"].value,
                     email: form["Email"].value,
                     year: form["Year"].value,
@@ -77,14 +77,14 @@
                     eventDept: eventDept
                 }, function (error) {
                     if (error) {
+                        document.getElementById('loading').className = '';
                         alert('Sorry! You couldn\'t be registered. Please try again!');
                         form.reset();
                     } else {
+                        document.getElementById('loading').className = '';
                         alert('Registration Successful!');
                         form.reset();
                     }
-                }).then(() => {
-                    document.getElementById('loading').className = '';
                 });
                 return false;
             }
@@ -144,6 +144,7 @@
         </form>
     </div>
 </body>
-<div class="footer ">DESIGNED AND DEVELOPED BY DEPARTMENT OF INFORMATION TECHNOLOGY</div>
-
+<div class="footer " style="display: inline;">
+    MADE WITH <span class="love">❤️</span> BY <a  style="color: #eff0f2; text-decoration: none;" href="https://www.linkedin.com/in/theazizrahman/" >AZIZ</a>, <a  style="color: #eff0f2;text-decoration: none;" href="https://www.linkedin.com/in/amitjoki/" >AMIT</a> AND FRIENDS AT INFORMATION TECHNOLOGY
+</div>
 </html>
