@@ -14,7 +14,7 @@
   <div id="stars3" style="position: fixed;"></div>
 
   <script>
-    var hash = location.hash.replace(/_/g, ' ').substr(1);
+    var hash = decodeURIComponent(location.hash).replace(/_/g, ' ').substr(1);
     var eventName = hash.split('-')[0];
     var eventDept = hash.split('-')[1];
   </script>
@@ -84,6 +84,7 @@
       }
     </script>
     <form name="register" action="" method="POST" onsubmit="return validateAndSubmit()">
+      <h1 class="shadow">Fill "0" for the remaining member details if you don't have 2 members. </h1>
       <div class="tab-content shadow" style="font-size: 85%; max-height: 80%; padding: 10PX; ">
         <h1 class="shadow" style="padding-bottom: 8px;">
           <script>document.write(eventName + ' - ' + eventDept + ' DEPARTMENT')</script>
