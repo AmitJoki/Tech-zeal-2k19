@@ -107,8 +107,8 @@
         </form>
     </div>
     <script>
-            var HOSTELLIMIT = 50;
-            document.getElementById('hostel').style.display = 'none'; 
+            var HOSTELLIMIT = 20;
+            document.getElementById('hostel').style.display = 'none';
             var config = {
                 apiKey: "AIzaSyAUIgbQuHLe6WOK0FmbeOUw6azgtR3mpn0",
                 authDomain: "techzeal.firebaseapp.com",
@@ -135,7 +135,7 @@
                 if(!db) {
                     alert('Loading...');
                     return false;
-                } 
+                }
                 var form = document.forms["register"];
                 var els = Object.values(form);
                 els.pop();
@@ -155,7 +155,7 @@
                     if(str.indexOf(form["Email"].value.toLowerCase()) > -1 || str.indexOf(form["Phone"].value.toLowerCase()) > -1) {
                         alert('You can only participate in ' + entry[0] + " department!");
                         return false;
-                    } 
+                    }
                 }
                 if(form['hostel'].checked) {
                     firebase.database().ref('users/HOSTEL/' + form["Email"].value).set({
@@ -167,7 +167,7 @@
                         mobile: form["Phone"].value,
                         eventName: eventName,
                         eventDept: eventDept
-                    });        
+                    });
                 }
                 document.getElementById('loading').className = 'loading';
                 firebase.database().ref('users/' + eventDept + '/' + eventName + '/' + form["Phone"].value).set({
